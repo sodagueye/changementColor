@@ -1,0 +1,19 @@
+.groupe{
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
+    margin-bottom: 10px; 
+}
+.rouge{
+    background-color: red;
+    margin: 5px;
+}
+.orange{
+    background-color: yellow;
+    margin: 5px;
+
+}
+ .vert{
+    background-color: green;
+    margin: 5px;
+} 
