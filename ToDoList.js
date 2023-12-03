@@ -8,48 +8,58 @@ function ajouter(){
     }
     else{
         // creation element div
-        let divs=document.createElement("div");
-        divs.classList.add("groupe")
-        listes.appendChild(divs);
+        let item=document.createElement("div");
+        item.classList.add("groupe")
+       
+
         let lis =document.createElement("li")
-        divs.appendChild(lis)
+        item.appendChild(lis)
         lis.innerHTML =input.value;
-        let spans= document.createElement("span")
-        divs.appendChild(spans);
+
+        let spans= document.createElement("div")
+      
+
+        // creation button1
         let bouton1 =document.createElement("button");
         bouton1.classList.add("rouge")
         bouton1.innerText="ToDo"
-        divs.appendChild(bouton1)
-        let bouton2=document.createElement("button")
+
+       // creation button2
+      let bouton2=document.createElement("button")
         bouton2.classList.add("orange")
         bouton2.innerText="Doing"
-        divs.appendChild(bouton2)
+        
+       // creation button3
          let bouton3=document.createElement("button")
          bouton3.classList.add("vert")
          bouton3.innerText="Done"
-         divs.appendChild(bouton3)
         
         
+         spans.appendChild(bouton1)
+         spans.appendChild(bouton2)
+         spans.appendChild(bouton3)
+
+         item.appendChild(spans);
+         listes.appendChild(item)
+    // listes.appendChild(divs);
+    // divs.appendChild(spans);
         
-    }
+    
     input.value ="";
     // changement color
-    
-         bouton2.addEventListener('click', () => {
-        if (bouton2.innerHTML.toLowerCase() == "Doing") {
-            divs.style.backgroundColor = 'yellow'
-        }
-    });
-    bouton3.addEventListener('click', () => {
-        if (bouton3.innerHTML.toLowerCase() == "Done") {
-            divs.style.backgroundColor = 'yellow'
-        }
-    });
-    bouton1.addEventListener('click', () => {
-        if (bouton1.innerHTML.toLowerCase() == "ToDo") {
-            divs.style.backgroundColor = 'yellow'
-        }
+     bouton2.addEventListener('click', () => {
+        item.style.backgroundColor = 'yellow';
     });
 
+    bouton3.addEventListener('click', () => {
+        item.style.backgroundColor = 'green';
+    });
+
+    bouton1.addEventListener('click', () => {
+        item.style.backgroundColor = 'red';
+    });
+}
+    
+   
 }
 
